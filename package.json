@@ -1,8 +1,7 @@
 {
   "name": "bs4-toast",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "Toast - A Bootstrap 4.2+ jQuery plugin for the toast component",
-  "main": "dist/toast.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Script47/Toast.git"
@@ -24,5 +23,12 @@
   "dependencies": {
     "bootstrap": ">=4.2.0",
     "jquery": ">=1.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-uglify": "^3.0.2"
   }
 }
