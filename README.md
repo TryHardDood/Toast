@@ -88,6 +88,10 @@ The toasts are stackable:
 
 ![Example #6](https://i.gyazo.com/da0e40283269c3c38de605b7c938fa95.png)
 
+The toasts can be positioned:
+
+![Example #7](https://i.imgur.com/s5IHxxm.png)
+
 ### Caveats
 
 * ~~The toast will remain in the DOM when hidden, I am working on a way to incorperate removing them from the DOM or reusing existing ones if left in, however, for the time being, you can use the following to remove the toast once it is hidden from the DOM:~~ - As of 2019-03-16, the toasts will be removed automatically from the DOM.
@@ -117,3 +121,4 @@ I am open to contributions and you could contribute in many ways:
 * Tell us if you are using the plugin and the project 
 
 The minifier that is used is: https://closure-compiler.appspot.com/home
+
