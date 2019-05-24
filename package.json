@@ -29,6 +29,8 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^4.0.1",
-    "gulp-uglify": "^3.0.2"
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "uglify-es": "^3.3.9"
   }
 }

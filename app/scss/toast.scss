@@ -1,0 +1,37 @@
+/**
+ * @author Script47 (https://github.com/Script47/Toast)
+ * @description Toast - A Bootstrap 4.2+ jQuery plugin for the toast component
+ * @version 0.6.0
+ **/
+$yAxis: (
+        top: '0',
+        bottom: '0',
+        middle: '50%'
+);
+
+$zAxis: (
+        left: '0',
+        right: '0',
+        middle: '50%'
+);
+
+.toast-container {
+  position: sticky;
+  z-index: 1055;
+  top: 0;
+
+  .toast-wrapper {
+    position: absolute;
+    margin: 5px;
+
+    .toast {
+      min-width: 150px;
+      border-top: none;
+      background-color: rgb(255, 255, 255);
+
+      .toast-header strong {
+        padding-right: 20px;
+      }
+    }
+  }
+}
