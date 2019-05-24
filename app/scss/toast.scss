@@ -3,29 +3,52 @@
  * @description Toast - A Bootstrap 4.2+ jQuery plugin for the toast component
  * @version 0.6.0
  **/
-$yAxis: (
-        top: '0',
-        bottom: '0',
-        middle: '50%'
-);
 
-$zAxis: (
-        left: '0',
-        right: '0',
-        middle: '50%'
-);
+.top-right.toast-container {
+  top: 0;
+  right: 0;
+  margin-left: 0;
+}
+
+.top-left.toast-container {
+  top: 0;
+  left: 0;
+  margin-right: 0;
+}
+
+.top-center.toast-container {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 0;
+}
+
+.bottom-right.toast-container {
+  bottom: 0;
+  right: 0;
+  margin-left: 0;
+}
+
+.bottom-left.toast-container {
+  bottom: 0;
+  left: 0;
+  margin-right: 0;
+}
+
+.bottom-center.toast-container {
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+}
 
 .toast-container {
-  position: sticky;
-  z-index: 1055;
-  top: 0;
+  position: fixed;
+  z-index: 9999;
 
   .toast-wrapper {
-    position: absolute;
     margin: 5px;
 
     .toast {
-      min-width: 150px;
+      min-width: 300px;
       border-top: none;
       background-color: rgb(255, 255, 255);
 

@@ -4,19 +4,7 @@
  * @version 0.7.0
  **/
 (function ($) {
-    var TOAST_CONTAINER_HTML = '<div id="toast-container" aria-live="polite" aria-atomic="true"></div>';
-    var TOAST_WRAPPER_HTML = '<div id="toast-wrapper"></div>';
-
     $.toast = function (opts) {
-        if (!$('#toast-container').length) {
-            $('body').prepend(TOAST_CONTAINER_HTML);
-            $('#toast-container').append(TOAST_WRAPPER_HTML);
-
-            $('body').on('hidden.bs.toast', '.toast', function () {
-                $(this).remove();
-            });
-        }
-
         var id = 'toast-' + ($('.toast').length + 1),
             html = '',
             bg_header_class = '',
@@ -31,7 +19,8 @@
             img = opts.img,
             pause_on_hover = opts.pause_on_hover || false,
             pause = false,
-            delay_or_autohide = '';
+            delay_or_autohide = '',
+            position = opts.position || 'top-right';
 
         switch (type) {
             case 'info':
@@ -93,15 +82,28 @@
         html += '</div>';
 
         if (content !== '') {
-            html += '<div class="toast-body">'
-            html += content
+            html += '<div class="toast-body">';
+            html += content;
             html += '</div>';
         }
 
         html += '</div>';
 
-        $('#toast-wrapper').append(html);
-        $('#toast-wrapper .toast:last').toast('show');
+        if (!document.getElementsByClassName(`toast-container ${position}`).length) {
+            $('body').prepend(`<div class="toast-container ${position}" aria-live="polite" aria-atomic="true"></div>`);
+        }
+
+        if (!document.getElementsByClassName(`toast-container ${position}`)[0].hasChildNodes()) {
+            let wrapper = document.createElement('div');
+            wrapper.className = 'toast-wrapper';
+            document.getElementsByClassName(`toast-container ${position}`)[0].append(wrapper);
+        }
+
+        let e = document.createElement('div');
+        e.innerHTML = html;
+
+        const element = document.getElementsByClassName(`toast-container ${position}`)[0].firstChild.appendChild(e);
+        $(element.firstChild).toast('show');
 
         if (pause_on_hover !== false) {
             setTimeout(function () {
