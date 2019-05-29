@@ -101,7 +101,6 @@ class BsToast {
       <span aria-hidden="true" class="${this.fg_dismiss_class}">&times;</span>
     </button>
   </div>`;
-        console.log(this.content);
         if (this.content !== '') {
             html += `<div class="toast-body">
                         ${this.content}
