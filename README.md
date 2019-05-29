@@ -1,4 +1,5 @@
 # Toast - A Bootstrap 4.2+ jQuery plugin
+[![Netlify Status](https://api.netlify.com/api/v1/badges/217cb030-e1a9-4fda-907c-98c9762ce185/deploy-status)](https://app.netlify.com/sites/bootstrap-toasts/deploys)
 
 * [About](#about)
 * [Demo](https://bootstrap-toasts.netlify.com/)
