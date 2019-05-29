@@ -1,0 +1,258 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Bootstrap Toast -->
+    <link rel="stylesheet" href="css/toast.min.css">
+
+    <!-- PrismJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css">
+
+    <title>Bootstrap Toasts</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Bootstrap Toast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Demo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="bs4.html">Bootstap v4 & jQuery</a>
+                    <a class="dropdown-item" href="bs5.html">Bootstrap v5</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/TryHardDood/Toast" target="_blank"><i
+                        class="fab fa-github"></i> Github</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Demo</h5>
+
+            <div>
+                <a class="btn btn-primary" href="#" onclick="showRandomToast();">
+                    Show Random Toast
+                </a>
+
+                <a class="btn btn-primary float-right" data-toggle="collapse" href="#randomtoastsource" role="button"
+                   aria-expanded="false" aria-controls="randomtoastsource">
+                    <i class="fas fa-code"></i> View code
+                </a>
+            </div>
+
+            <div class="collapse" id="randomtoastsource">
+        <pre><code class="language-javascript">function showRandomToast(pause_on_hover = false) {
+    let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+        title = TITLES[type],
+        content = CONTENT[type];
+    new BsToast({
+        title: title,
+        subtitle: '11 mins ago',
+        content: content,
+        type: type,
+        pause_on_hover: pause_on_hover,
+        delay: 5000,
+        position: 'top-right'
+    });
+}</code></pre>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Demo 2</h5>
+
+            <div>
+                <a class="btn btn-primary" href="#" onclick="showRandomToast(true);">
+                    Pause on Hover
+                </a>
+
+                <a class="btn btn-primary float-right" data-toggle="collapse" href="#randomtoastsource2" role="button"
+                   aria-expanded="false" aria-controls="randomtoastsource2">
+                    <i class="fas fa-code"></i> View code
+                </a>
+            </div>
+
+            <div class="collapse" id="randomtoastsource2">
+        <pre><code class="language-javascript">function showRandomToast(pause_on_hover = false) {
+    let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+        title = TITLES[type],
+        content = CONTENT[type];
+    new BsToast({
+        title: title,
+        subtitle: '11 mins ago',
+        content: content,
+        type: type,
+        pause_on_hover: pause_on_hover,
+        delay: 5000,
+        position: 'top-right'
+    });
+}</code></pre>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Demo 3</h5>
+
+            <div>
+                <a class="btn btn-primary" href="#" onclick="showImageToast();">
+                    Show Image Toast
+                </a>
+
+                <a class="btn btn-primary float-right" data-toggle="collapse" href="#imagetoastsource" role="button"
+                   aria-expanded="false" aria-controls="imagetoastsource">
+                    <i class="fas fa-code"></i> View code
+                </a>
+            </div>
+
+            <div class="collapse" id="imagetoastsource">
+    <pre><code class="language-javascript">function showImageToast() {
+    let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+        title = TITLES[type],
+        content = CONTENT[type];
+    new BsToast({
+        title: title,
+        subtitle: '11 mins ago',
+        content: content,
+        type: type,
+        delay: 5000,
+        position: 'top-right',
+        img: {
+            src: 'https://via.placeholder.com/25',
+            class: 'rounded',
+            title: 'Thumbnail Title',
+            alt: 'Alternative'
+        }
+    });
+}</code></pre>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Demo 4</h5>
+
+            <div>
+                <a class="btn btn-primary" href="#" onclick="showSnackToast();">
+                    Show Random Snack
+                </a>
+
+                <a class="btn btn-primary float-right" data-toggle="collapse" href="#snacktoastsource" role="button"
+                   aria-expanded="false" aria-controls="snacktoastsource">
+                    <i class="fas fa-code"></i> View code
+                </a>
+            </div>
+
+            <div class="collapse" id="snacktoastsource">
+    <pre><code class="language-javascript">function showSnackToast() {
+    let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+        content = CONTENT[type].replace('toast', 'snack');
+    new BsToast({
+        title: content,
+        type: type,
+        delay: 5000,
+        position: 'bottom-left'
+    });
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap Toast -->
+<script src="js/toast.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
+<script type="text/javascript">
+    const TYPES = ['info', 'warning', 'success', 'error'],
+        TITLES = {
+            'info': 'Notice!',
+            'success': 'Awesome!',
+            'warning': 'Watch Out!',
+            'error': 'Doh!'
+        },
+        CONTENT = {
+            'info': 'Hello, world! This is a toast message.',
+            'success': 'The action has been completed.',
+            'warning': 'It\'s all about to go wrong',
+            'error': 'It all went wrong.'
+        };
+
+    function showRandomToast(pause_on_hover = false) {
+        let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+            title = TITLES[type],
+            content = CONTENT[type];
+        new BsToast({
+            title: title,
+            subtitle: '11 mins ago',
+            content: content,
+            type: type,
+            pause_on_hover: pause_on_hover,
+            delay: 5000,
+            position: 'top-right'
+        });
+    }
+
+    function showImageToast() {
+        let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+            title = TITLES[type],
+            content = CONTENT[type];
+        new BsToast({
+            title: title,
+            subtitle: '11 mins ago',
+            content: content,
+            type: type,
+            delay: 5000,
+            position: 'top-right',
+            img: {
+                src: 'https://via.placeholder.com/25',
+                class: 'rounded',
+                title: 'Thumbnail Title',
+                alt: 'Alternative'
+            }
+        });
+    }
+
+    function showSnackToast() {
+        let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+            content = CONTENT[type].replace('toast', 'snack');
+        new BsToast({
+            title: content,
+            type: type,
+            delay: 5000,
+            position: 'bottom-left'
+        });
+    }
+</script>
+</body>
+</html>

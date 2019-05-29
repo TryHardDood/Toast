@@ -45,15 +45,20 @@
   z-index: 9999;
 
   .toast-wrapper {
-    margin: 5px;
 
     .toast {
+      margin: 5px;
+
       min-width: 300px;
-      border-top: none;
+      border: 0;
       background-color: rgb(255, 255, 255);
 
-      .toast-header strong {
-        padding-right: 20px;
+      .toast-header {
+        border-bottom: 0;
+
+        strong {
+          padding-right: 20px;
+        }
       }
     }
   }

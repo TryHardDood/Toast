@@ -4,7 +4,7 @@
   "description": "Toast - A Bootstrap 4.2+ jQuery plugin for the toast component",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Script47/Toast.git"
+    "url": "git+https://github.com/TryHardDood/Toast.git"
   },
   "keywords": [
     "bootstrap-4",
@@ -14,18 +14,21 @@
     "snack",
     "jquery-plugin"
   ],
-  "author": "Script47 <Script47@hotmail.com>",
+  "author": "TryHardDood",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Script47/Toast/issues"
+    "url": "https://github.com/TryHardDood/Toast/issues"
   },
-  "homepage": "https://github.com/Script47/Toast",
+  "homepage": "https://github.com/TryHardDood/Toast",
   "dependencies": {
-    "bootstrap": ">=4.2.0",
+    "bootstrap": "^4.3.1",
     "jquery": ">=1.9.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^4.0.1",

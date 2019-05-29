@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Bootstrap Toast -->
+    <link rel="stylesheet" href="css/toast.min.css">
+
+    <!-- PrismJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css">
+
+    <title>Bootstrap Toasts</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Bootstrap Toast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Demo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="bs4.html">Bootstap v4 & jQuery</a>
+                    <a class="dropdown-item" href="bs5.html">Bootstrap v5</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/TryHardDood/Toast" target="_blank"><i
+                        class="fab fa-github"></i> Github</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="jumbotron">
+    <h1 class="display-4">Hello, world! :)</h1>
+    <p class="lead">This is just a simple plugin which allows to dynamically create Bootstrap Toasts from
+        javascript.</p>
+    <hr class="my-4">
+    <p>Supported Bootstrap versions:</p>
+    <ul>
+        <li>v4.2 and up</li>
+        <li>v5</li>
+    </ul>
+    <p><strong>Older versions than v4.2 are not supported.</strong></p>
+    <a class="btn btn-primary btn-lg" href="https://github.com/TryHardDood/Toast" target="_blank" role="button"><i
+            class="fas fa-code"></i> Source code</a>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Installation</h5>
+
+            <ol>
+                <li>Download the latest version from <a href="#">Github</a></li>
+                <li>Extract the zip file.</li>
+                <li>Copy the <code>build/</code> folder contents to your project.</li>
+                <li>Include the <code>toast.min.css</code> after Bootstrap's CSS file.</li>
+                <li>Include the <code>toast.min.js</code> after Bootstrap's JS file.</li>
+            </ol>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Usage</h5>
+
+            <pre><code class="language-javascript">new BsToast({
+    title: 'Toast title',
+    subtitle: 'Toast subtitle',
+    content: 'Toast content',
+    type: 'Toast type',
+    delay: 5000,
+    img: {
+        src: 'https://via.placeholder.com/25',
+        class: 'rounded',
+        title: 'Thumbnail Title',
+        alt: 'Alternative'
+    }
+});</code></pre>
+
+            <div class="table-responsive mt-3">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th style="border-top: none"></th>
+                        <th style="border-top: none">type</th>
+                        <th style="border-top: none">Description</th>
+                        <th style="border-top: none">Note</th>
+                        <th style="border-top: none">Default value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>title</strong></td>
+                        <td style="white-space: nowrap;"><code>string</code></td>
+                        <td>The Toast's title</td>
+                        <td>Can be null or empty</td>
+                        <td><code>Notice!</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>subtitle</strong></td>
+                        <td style="white-space: nowrap;"><code>string</code></td>
+                        <td>The Toast's subtitle</td>
+                        <td>Can be null or empty</td>
+                        <td><code>''</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>content</strong></td>
+                        <td style="white-space: nowrap;"><code>string</code></td>
+                        <td>The Toast's content</td>
+                        <td>Can be null or empty</td>
+                        <td><code>''</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>type</strong></td>
+                        <td style="white-space: nowrap;"><code>string</code></td>
+                        <td>The Toast's type</td>
+                        <td>Can be <code>info, success, warning, danger</code></td>
+                        <td><code>info</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>delay</strong></td>
+                        <td style="white-space: nowrap;"><code>number</code></td>
+                        <td>The Toast's delay until it disappears</td>
+                        <td>Can be null</td>
+                        <td><code>-1</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>position</strong></td>
+                        <td style="white-space: nowrap;"><code>string</code></td>
+                        <td>The Toast's location where it will appear</td>
+                        <td>Can be <code>top-right, top-left, top-center, bottom-right, bottom-left, bottom-center</code></td>
+                        <td><code>top-right</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>img</strong></td>
+                        <td style="white-space: nowrap;"><code>object</code></td>
+                        <td>An image that will appear in the Toasts header</td>
+                        <td>See demo</td>
+                        <td><code>null</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>pause_on_hover</strong></td>
+                        <td style="white-space: nowrap;"><code>boolean</code></td>
+                        <td>Pauses the toast and does not disappear until it's hovered</td>
+                        <td></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- Bootstrap Toast -->
+    <script src="js/toast.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
+</body>
+</html>
