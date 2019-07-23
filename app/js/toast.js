@@ -3,7 +3,7 @@ const WRAPPER_CLASS = "toast-wrapper";
 
 class BsToast {
 
-    constructor({title, subtitle, content, type, delay, position, img, pause_on_hover, customClass}) {
+    constructor({title, subtitle, content, type, delay, position, img, icon, pause_on_hover, customClass}) {
         this.id = 'toast-' + (document.getElementsByClassName('toast').length + 1);
         this.title = title || 'Notice!';
         this.subtitle = subtitle || '';
@@ -12,6 +12,7 @@ class BsToast {
         this.delay = delay || -1;
         this.position = position || 'top-right';
         this.img = img;
+        this.icon = icon;
         this.pause_on_hover = pause_on_hover || false;
         this.customClass = customClass || '';
 
@@ -95,12 +96,16 @@ class BsToast {
 <div id="${this.id}" class="toast${' ' + this.customClass}" role="alert" aria-live="assertive" aria-atomic="true" ${this.delay_or_autohide} ${this.pause_on_hover}>
   <div class="toast-header ${this.bg_header_class} ${this.fg_header_class}">`;
 
-        if (typeof this.img !== 'undefined') {
+        if (typeof this.img !== 'undefined' && typeof this.icon === 'undefined') {
             html += `<img src="${this.img.src}" class="${(this.img.class || '')} mr-2" alt="${(this.img.alt || 'Image')}" ${(typeof this.img.title !== 'undefined' ? 'data-toggle="tooltip" title="' + this.img.title + '"' : '')}>`;
         }
 
+        if (typeof this.icon !== 'undefined' && typeof img === 'undefined') {
+           html += this.icon;
+        }
+
         html += `
-    <strong class="mr-auto">${this.title}</strong>
+    <strong class="mr-auto ${(typeof this.icon !== 'undefined') ? 'ml-2' : '' }">${this.title}</strong>
     <small class="${this.fg_subtitle_class}">${this.subtitle}</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true" class="${this.fg_dismiss_class}">&times;</span>
