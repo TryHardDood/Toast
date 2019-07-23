@@ -16,6 +16,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css">
 
     <title>Bootstrap Toasts</title>
+
+    <style>
+        .myclass .toast-header {
+          background-color: #000000;
+          color: #fff;
+        }
+
+        .myclass .toast-header .close {
+          color: #fff;
+        }
+        .myclass .toast-body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -184,6 +199,52 @@
 }</code></pre>
             </div>
         </div>
+        <div class="card-body">
+            <h5 class="card-title">Demo 5</h5>
+
+            <div>
+                <a class="btn btn-primary" href="#" onclick="showCustomToast();">
+                    Show custom toast
+                </a>
+
+                <a class="btn btn-primary float-right" data-toggle="collapse" href="#customtoastsource" role="button"
+                   aria-expanded="false" aria-controls="customtoastsource">
+                    <i class="fas fa-code"></i> View code
+                </a>
+            </div>
+
+            <div class="collapse" id="customtoastsource">
+<pre><code class="language-css">.myclass .toast-header {
+  background-color: #000000;
+  color: #fff;
+}
+
+.myclass .toast-header .close {
+  color: #fff;
+}
+.myclass .toast-body {
+  background-color: #212121;
+  color: #fff;
+}
+</code></pre>
+
+    <pre><code class="language-javascript">function showCustomToast() {
+    let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+        title = TITLES[type],
+        content = CONTENT[type];
+    new BsToast({
+        title: title,
+        subtitle: '11 mins ago',
+        content: content,
+        type: type,
+        pause_on_hover: true,
+        delay: 5000,
+        position: 'top-right',
+        customClass: 'myclass'
+    });
+}</code></pre>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -250,6 +311,22 @@
             type: type,
             delay: 5000,
             position: 'bottom-left'
+        });
+    }
+
+    function showCustomToast() {
+        let type = TYPES[Math.floor(Math.random() * TYPES.length)],
+            title = TITLES[type],
+            content = CONTENT[type];
+        new BsToast({
+            title: title,
+            subtitle: '11 mins ago',
+            content: content,
+            type: type,
+            pause_on_hover: true,
+            delay: 5000,
+            position: 'top-right',
+            customClass: 'myclass'
         });
     }
 </script>

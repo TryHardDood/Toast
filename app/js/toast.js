@@ -3,7 +3,7 @@ const WRAPPER_CLASS = "toast-wrapper";
 
 class BsToast {
 
-    constructor({title, subtitle, content, type, delay, position, img, pause_on_hover}) {
+    constructor({title, subtitle, content, type, delay, position, img, pause_on_hover, customClass}) {
         this.id = 'toast-' + (document.getElementsByClassName('toast').length + 1);
         this.title = title || 'Notice!';
         this.subtitle = subtitle || '';
@@ -13,6 +13,8 @@ class BsToast {
         this.position = position || 'top-right';
         this.img = img;
         this.pause_on_hover = pause_on_hover || false;
+        this.customClass = customClass || '';
+
         this.pause = false;
 
         this.bg_header_class = '';
@@ -54,40 +56,43 @@ class BsToast {
             }
         }
 
-        switch (this.type) {
-            case 'info':
-                this.bg_header_class = 'bg-info';
-                this.fg_header_class = 'text-white';
-                this.fg_subtitle_class = 'text-white';
-                this.fg_dismiss_class = 'text-white';
-                break;
+        // If custom class is defined then don't style the toast by it's type.
+        if(!this.customClass) {
+            switch (this.type) {
+                case 'info':
+                    this.bg_header_class = 'bg-info';
+                    this.fg_header_class = 'text-white';
+                    this.fg_subtitle_class = 'text-white';
+                    this.fg_dismiss_class = 'text-white';
+                    break;
 
-            case 'success':
-                this.bg_header_class = 'bg-success';
-                this.fg_header_class = 'text-white';
-                this.fg_subtitle_class = 'text-white';
-                this.fg_dismiss_class = 'text-white';
-                break;
+                case 'success':
+                    this.bg_header_class = 'bg-success';
+                    this.fg_header_class = 'text-white';
+                    this.fg_subtitle_class = 'text-white';
+                    this.fg_dismiss_class = 'text-white';
+                    break;
 
-            case 'warning':
-            case 'warn':
-                this.bg_header_class = 'bg-warning';
-                this.fg_header_class = 'text-white';
-                this.fg_subtitle_class = 'text-white';
-                this.fg_dismiss_class = 'text-white';
-                break;
+                case 'warning':
+                case 'warn':
+                    this.bg_header_class = 'bg-warning';
+                    this.fg_header_class = 'text-white';
+                    this.fg_subtitle_class = 'text-white';
+                    this.fg_dismiss_class = 'text-white';
+                    break;
 
-            case 'error':
-            case 'danger':
-                this.bg_header_class = 'bg-danger';
-                this.fg_header_class = 'text-white';
-                this.fg_subtitle_class = 'text-white';
-                this.fg_dismiss_class = 'text-white';
-                break;
+                case 'error':
+                case 'danger':
+                    this.bg_header_class = 'bg-danger';
+                    this.fg_header_class = 'text-white';
+                    this.fg_subtitle_class = 'text-white';
+                    this.fg_dismiss_class = 'text-white';
+                    break;
+            }
         }
 
         let html = `
-<div id="${this.id}" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ${this.delay_or_autohide} ${this.pause_on_hover}>
+<div id="${this.id}" class="toast${' ' + this.customClass}" role="alert" aria-live="assertive" aria-atomic="true" ${this.delay_or_autohide} ${this.pause_on_hover}>
   <div class="toast-header ${this.bg_header_class} ${this.fg_header_class}">`;
 
         if (typeof this.img !== 'undefined') {
