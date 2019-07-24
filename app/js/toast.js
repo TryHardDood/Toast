@@ -100,7 +100,7 @@ class BsToast {
             html += `<img src="${this.img.src}" class="${(this.img.class || '')} mr-2" alt="${(this.img.alt || 'Image')}" ${(typeof this.img.title !== 'undefined' ? 'data-toggle="tooltip" title="' + this.img.title + '"' : '')}>`;
         }
 
-        if (typeof this.icon !== 'undefined' && typeof img === 'undefined') {
+        if (typeof this.icon !== 'undefined' && typeof this.img === 'undefined') {
            html += this.icon;
         }
 
